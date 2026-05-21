@@ -3,7 +3,7 @@ agent any
 stages {
 stage('Clone') {
 steps {
-git 'YOUR_GITHUB_REPO_LINK'
+git 'https://github.com/Prathap023/App-rep.git'
 }
 }
 stage('Build') {
@@ -12,12 +12,12 @@ steps {sh 'mvn clean package'
 }
 stage('Docker Build') {
 steps {
-sh 'docker build -t hello-app .'
+sh 'docker build -t AppDemo .'
 }
 }
 stage('Run Container') {
 steps {
-sh 'docker run hello-app'
+sh 'docker run AppDemo'
 }
 }
 }
